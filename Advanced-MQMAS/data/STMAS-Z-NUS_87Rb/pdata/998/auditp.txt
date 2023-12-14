@@ -1,0 +1,15 @@
+##TITLE= Audit trail, TopSpin 4.1.1
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ C:/Users/root/Documents/HK/iProbeCPtest20210109/22/pdata/998/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-01-10 17:46:17.680 +0900>,<root>,<CZC849701S>,<mvrow>,<TopSpin 4.1.1>,
+      <f1projp 1 1024 from
+       1 22 "iProbeCPtest20210109" "C:/Users/root/Documents/HK"
+       data hash MD5: 512
+       B1 B1 0E 3C 38 9E BA 18 61 78 B5 1C 93 53 6E 81>)
+##END=
+
+$$ hash MD5
+$$ 9B E7 DE E6 B5 2A 71 AF 1E 4D 31 8D 2B 64 4F F0

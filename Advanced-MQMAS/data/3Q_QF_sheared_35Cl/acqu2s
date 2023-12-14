@@ -1,0 +1,28 @@
+##TITLE= Parameter file, TopSpin 4.1.4
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 108	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= solidnmr
+$$ 2023-06-17 17:20:40.398 +0200  solidnmr@CZC1249Y47
+$$ /opt/nmrdata/data_CNRS/solidnmr_2023/900.JT-230612/16/acqu2s
+$$ process /opt/topspin4.1.4/prog/mod/dataserver
+##$ACQT0= 0
+##$BF1= 333.214038222
+##$DE= 12.5
+##$DECIM= 1
+##$DR= 32
+##$FW= 2.4e+08
+##$FnILOOP= 1
+##$FnMODE= 1
+##$NUC1= <35Cl>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 100
+##$O1= 12451.0644445
+##$ProjAngle= 0
+##$SFO1= 333.226489287
+##$SW= 75.0240476185
+##$SW_h= 25000
+##$TD= 100
+##END=

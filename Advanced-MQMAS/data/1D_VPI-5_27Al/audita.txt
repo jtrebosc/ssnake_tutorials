@@ -1,0 +1,19 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ /root/.topspin-BladeEpu/local_acqu/400.MOOC-200228/22/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-02-28 16:50:01.921 +0000>,<root>,<BladeEpu>,<go4>,<TopSpin 4.0.8>,
+      <created by zg on 'Av Neo 400s' (rmn400s) by user 'servicermn'
+       on data set with UUID '0c7f154c-5a4a-11ea-8b54-001395379d89'
+       started at 2020-02-28 16:47:47.270 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2020-02-28 16:50:01.919 +0000
+       configuration hash MD5:
+       09 F1 08 36 DD 61 96 89 C7 94 37 85 FA 9B DE 48
+       double data hash MD5: 30000
+       44 13 04 87 C0 60 83 56 DE 0E 80 B3 7F 4B 9A 86>)
+##END=
+
+$$ hash MD5
+$$ 89 25 A8 18 CF 31 59 41 16 44 E2 7B 9F FB F2 F5

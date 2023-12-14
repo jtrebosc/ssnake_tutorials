@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.1.4
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 7	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= servicermn
+$$ 2022-06-02 00:04:33.164 +0200  trebosc@trebosc-Latitude-7390
+$$ /home/trebosc/NMR/data/RMN400sNEO/nmr/400.MOOC-200228/33/pdata/1/assocs
+$$ process /opt/topspin4.1.4/prog/mod/dataserver
+##$MULTDISP= </home/trebosc/NMR/data/RMN400sNEO/nmr/400.MOOC-200228/22/pdata/1>
+##END=

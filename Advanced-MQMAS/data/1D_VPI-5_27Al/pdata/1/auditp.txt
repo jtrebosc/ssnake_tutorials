@@ -1,0 +1,96 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= servicermn
+$$ /opt/nmrdata/2020/UCCS/400.MOOC-200228/22/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-02-28 16:50:01.921 +0000>,<root>,<BladeEpu>,<go4>,<TopSpin 4.0.8>,
+      <created by zg on 'Av Neo 400s' (rmn400s) by user 'servicermn'
+       on data set with UUID '0c7f154c-5a4a-11ea-8b54-001395379d89'
+       started at 2020-02-28 16:47:47.270 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2020-02-28 16:50:01.919 +0000
+       configuration hash MD5:
+       09 F1 08 36 DD 61 96 89 C7 94 37 85 FA 9B DE 48
+       double data hash MD5: 30000
+       44 13 04 87 C0 60 83 56 DE 0E 80 B3 7F 4B 9A 86>)
+(   2,<2020-02-28 17:53:11.626 +0100>,<servicermn>,<rmn400s>,<proc1d>,<TopSpin 4.0.8>,
+      <Start of raw data processing
+       efp LB = 50 FT_mod = 6 PKNL = 1 PHC0 = -701.404 PHC1 = -2818.8 SI = 128K 
+       data hash MD5: 128K
+       15 E7 53 2E DE 9A 9A AC C5 C7 D6 E2 9F 4F 1A 9B>)
+(   3,<2020-02-28 17:54:12.275 +0100>,<servicermn>,<rmn400s>,<proc1d>,<TopSpin 4.0.8>,
+      <pk fgphup PHC0 = -46.71818 PHC1 = 94.4 
+       data hash MD5: 128K
+       48 20 D3 3A 0A EB A6 89 B6 2C 91 EA 63 E4 95 6C>)
+$$ /home/trebosc/NMR/data/RMN400sNEO/nmr/400.MOOC-200228/22/pdata/1/auditp.txt
+(   4,<2022-06-01 19:51:58.663 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       fp FT_mod = 6 PKNL = 1 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 128K
+       AE 3F FD 23 03 D6 4C CA EA DC 05 11 E0 34 D3 9A>)
+(   5,<2022-06-01 19:52:06.635 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <absf ABSG = 5 ABSF2 = -5.539528 ABSF1 = 5.648714 
+       data hash MD5: 128K
+       4F 98 D7 BA D3 0C 59 B7 4B BB C9 8D 01 40 B9 D7>)
+(   6,<2022-06-01 19:52:08.689 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       fp FT_mod = 6 PKNL = 1 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 128K
+       AE 3F FD 23 03 D6 4C CA EA DC 05 11 E0 34 D3 9A>)
+(   7,<2022-06-01 19:52:10.547 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <abs ABSG = 5 
+       data hash MD5: 128K
+       C7 37 1A 56 A8 38 26 F1 93 5E D0 84 35 9E 15 B2>)
+(   8,<2022-06-01 19:55:54.299 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <sab NZP = 0 
+       data hash MD5: 128K
+       09 DB 54 40 06 94 16 17 CA 12 50 41 2F C7 84 5B>)
+(   9,<2022-06-01 21:42:49.636 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       efp LB = 50 FT_mod = 6 PKNL = 1 STSR = 64691 STSI = 1219 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 1219
+       8F 4A 76 14 20 28 C5 17 0C 7E 14 B0 2D 1F 92 5B>)
+(  10,<2022-06-01 21:44:08.151 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 STSR to 0>)
+(  11,<2022-06-01 21:44:12.171 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 STSI to 0>)
+(  12,<2022-06-01 21:44:19.260 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       efp LB = 50 FT_mod = 6 PKNL = 1 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 128K
+       F3 58 B5 81 83 46 BE A9 15 80 B7 61 40 77 7A 29>)
+(  13,<2022-06-01 21:44:26.559 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <sab NZP = 0 
+       data hash MD5: 128K
+       D2 99 70 09 4C 2D 8D 12 CC EA 88 23 BB 43 34 E1>)
+(  14,<2022-06-01 21:46:35.056 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       fp FT_mod = 6 PKNL = 1 STSR = 64673 STSI = 1270 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 1270
+       3E 95 41 CB AE 04 DD 13 1D E2 FC C4 9A 16 0E 67>)
+(  15,<2022-06-01 21:51:36.588 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 STSI to 0>)
+(  16,<2022-06-01 21:51:39.965 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 STSR to 0>)
+(  17,<2022-06-01 22:05:04.314 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       fp FT_mod = 6 PKNL = 1 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 128K
+       AE 3F FD 23 03 D6 4C CA EA DC 05 11 E0 34 D3 9A>)
+(  18,<2022-06-01 22:38:11.913 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <sab NZP = 0 
+       data hash MD5: 128K
+       2C CF B5 89 FD A1 EE 93 B1 DD 90 46 94 A1 98 0A>)
+(  19,<2022-06-02 12:04:48.772 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       fp FT_mod = 6 PKNL = 1 PHC0 = -748.1222 PHC1 = -2724.4 SI = 128K 
+       data hash MD5: 128K
+       AE 3F FD 23 03 D6 4C CA EA DC 05 11 E0 34 D3 9A>)
+(  20,<2022-06-02 15:58:59.897 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc1d>,<TopSpin 4.1.4>,
+      <sab NZP = 0 
+       data hash MD5: 128K
+       2C CF B5 89 FD A1 EE 93 B1 DD 90 46 94 A1 98 0A>)
+##END=
+
+$$ hash MD5
+$$ D8 F1 25 F2 D3 A2 BB 85 EC 3C 1B 0E C9 D2 97 BA

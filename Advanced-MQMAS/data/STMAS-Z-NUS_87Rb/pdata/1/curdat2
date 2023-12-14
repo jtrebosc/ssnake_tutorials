@@ -1,0 +1,23 @@
+##TITLE= Parameter file, TopSpin 4.1.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 4	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ 2021-01-10 17:46:27.482 +0900  root@CZC849701S
+$$ C:/Users/root/Documents/HK/iProbeCPtest20210109/22/pdata/1/curdat2
+$$ process C:\Bruker\TopSpin4.1.1\prog\mod\dataserver.exe
+##$DATPATH2= <C:/Users/root/Documents/HK>
+##$DATPATH3= <C:/Users/root/Documents/HK>
+##$DU2= <>
+##$DU3= <>
+##$EXPNO2= 22
+##$EXPNO3= 22
+##$NAME2= <iProbeCPtest20210109>
+##$NAME3= <iProbeCPtest20210109>
+##$PROCNO2= 999
+##$PROCNO3= 998
+##$TYPE= <>
+##$USER2= <>
+##$USER3= <>
+##END=

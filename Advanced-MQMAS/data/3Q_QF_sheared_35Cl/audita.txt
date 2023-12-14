@@ -1,0 +1,49 @@
+##TITLE= Audit trail, TopSpin 4.1.4
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= solidnmr
+$$ /opt/nmrdata/data_CNRS/solidnmr_2023/900.JT-230612/16/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-06-15 14:02:19.187 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <new/edc EXPNO=16 PROCNO=1>)
+(   2,<2023-06-15 14:02:46.754 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F2 ZGOPTNS to -D_DFS -DdecF2 -DS32>)
+(   3,<2023-06-15 14:03:03.500 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 IN_F to 60.0000>)
+(   4,<2023-06-15 14:03:06.800 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 IN_F to 80.0000>)
+(   5,<2023-06-15 14:03:24.855 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 IN_F to 40.0000>)
+(   6,<2023-06-15 14:03:29.077 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 TD to 100>)
+(   7,<2023-06-15 13:59:34.524 +0000>,<solidnmr>,<CZC1249Y47>,<go4>,<TopSpin 4.1.4>,
+      <acquisition in progress>)
+(   8,<2023-06-15 15:20:29.728 +0000>,<solidnmr>,<CZC1249Y47>,<go4>,<TopSpin 4.1.4>,
+      <created by zg on 'CAB AV4 900 MHZ EXT' (CZC1249Y47) by user 'solidnmr'
+       on data set with UUID 'dba1063e-0b84-11ee-82bb-0013951a35b5'
+       started at 2023-06-15 13:59:34.537 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2023-06-15 15:20:29.726 +0000
+       configuration hash MD5:
+       1E 90 2B 0E 2A BD F7 60 49 8A C8 0F 7E 8E B8 EC
+       double data hash MD5: 2K * 100
+       F6 5E CD 93 9D 13 C4 5F 93 5A 91 49 FC 00 C1 B8>)
+(   9,<2023-06-17 17:20:40.273 +0200>,<solidnmr>,<CZC1249Y47>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 NUC1 from 35Cl to 35Cl
+       double data hash MD5: 2K * 100
+       F6 5E CD 93 9D 13 C4 5F 93 5A 91 49 FC 00 C1 B8>)
+(  10,<2023-06-17 17:20:40.311 +0200>,<solidnmr>,<CZC1249Y47>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 BF1 from 88.2037160 to 88.203716
+       double data hash MD5: 2K * 100
+       F6 5E CD 93 9D 13 C4 5F 93 5A 91 49 FC 00 C1 B8>)
+(  11,<2023-06-17 17:20:40.353 +0200>,<solidnmr>,<CZC1249Y47>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SFO1 from 88.2070119 to 88.20701187
+       double data hash MD5: 2K * 100
+       F6 5E CD 93 9D 13 C4 5F 93 5A 91 49 FC 00 C1 B8>)
+(  12,<2023-06-17 17:20:40.397 +0200>,<solidnmr>,<CZC1249Y47>,<cprserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW to 283.4242>)
+(  13,<2023-06-17 17:20:40.398 +0200>,<solidnmr>,<CZC1249Y47>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW from 75.0240 to 283.424179892>)
+##END=
+
+$$ hash MD5
+$$ F5 87 B4 E8 1E 19 8F 54 CF 51 EA 28 AE 99 27 B1

@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.1.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ 2021-01-10 17:46:27.451 +0900  root@CZC849701S
+$$ C:/Users/root/Documents/HK/iProbeCPtest20210109/22/pdata/999/outd
+$$ process C:\Bruker\TopSpin4.1.1\prog\mod\mvrow.exe
+##$CURPLOT= <>
+##$CURPRIN= <$>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/layouts.ATP/1D.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

@@ -1,0 +1,15 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= nmrki
+$$ D:/data at BRUKER/400WBneo/iProbeCPtest20210109/22/pdata/903/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-01-17 14:07:11.488 +0900>,<nmrki>,<DESKTOP-A5QN39N>,<mvrow>,<TopSpin 4.0.8>,
+      <rsr 265 from
+       1 22 "iProbeCPtest20210109" "D:/data at BRUKER/400WBneo"
+       data hash MD5: 1K
+       FA 1F 18 7F 74 66 B6 55 22 85 F2 36 C6 A8 DB 88>)
+##END=
+
+$$ hash MD5
+$$ 76 0B E5 46 EC 9C 74 49 95 D6 38 36 D0 FF 1A A2

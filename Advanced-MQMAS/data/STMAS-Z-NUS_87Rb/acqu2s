@@ -1,0 +1,24 @@
+##TITLE= Parameter file, TopSpin 4.1.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 166	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ 2021-01-10 17:46:05.984 +0900  root@CZC849701S
+$$ C:/Users/root/Documents/HK/iProbeCPtest20210109/22/acqu2s
+$$ process C:\Bruker\TopSpin4.1.1\prog\au\bin\xfshear.exe
+##$ACQT0= 0
+##$BF1= 370.912159666667
+##$FnILOOP= 1
+##$FnMODE= 4
+##$NUC1= <87Rb>
+##$NusJSP= 0
+##$NusT2= 0.0063
+##$NusTD= 256
+##$O1= 0
+##$ProjAngle= 0
+##$SFO1= 370.912159666667
+##$SW= 24.2645051272737
+##$SW_h= 9000
+##$TD= 128
+##END=

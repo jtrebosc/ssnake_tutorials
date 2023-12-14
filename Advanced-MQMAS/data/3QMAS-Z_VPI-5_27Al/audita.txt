@@ -1,0 +1,48 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ /root/.topspin-BladeEpu/local_acqu/400.MOOC-200228/33/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-03-02 09:25:43.436 +0000>,<root>,<BladeEpu>,<go4>,<TopSpin 4.0.8>,
+      <created by zg on 'Av Neo 400s' (rmn400s) by user 'servicermn'
+       on data set with UUID 'a27c7418-5c61-11ea-9419-001395379d89'
+       started at 2020-03-02 08:41:39.685 +0000, POWCHK enabled, PULCHK disabled,
+       terminated by command 'stop' at 2020-03-02 09:25:43.435 +0000
+       configuration hash MD5:
+       09 F1 08 36 DD 61 96 89 C7 94 37 85 FA 9B DE 48
+       double data hash MD5: 5000 * 196
+       3F 1B 85 59 D2 68 13 84 56 25 70 32 79 07 45 0F>)
+$$ /home/trebosc/NMR/data/RMN400sNEO/nmr/400.MOOC-200228/33/audita.txt
+(   2,<2022-05-29 22:55:31.287 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 NUC1 from 27Al to 27Al
+       double data hash MD5: 5000 * 196
+       3F 1B 85 59 D2 68 13 84 56 25 70 32 79 07 45 0F>)
+(   3,<2022-05-29 22:55:31.322 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 BF1 from 104.2560990 to 104.256099
+       double data hash MD5: 5000 * 196
+       3F 1B 85 59 D2 68 13 84 56 25 70 32 79 07 45 0F>)
+(   4,<2022-05-29 22:55:31.360 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SFO1 from 104.2585990 to 104.258599
+       double data hash MD5: 5000 * 196
+       3F 1B 85 59 D2 68 13 84 56 25 70 32 79 07 45 0F>)
+(   5,<2022-05-29 22:55:31.382 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW to 95.9153>)
+(   6,<2022-05-29 22:55:31.383 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW from 95.9153 to 95.9153498696>)
+(   7,<2022-06-01 23:57:02.646 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 NUC1 from 27Al to 27Al>)
+(   8,<2022-06-01 23:57:02.707 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 BF1 from 104.2560990 to 104.256099>)
+(   9,<2022-06-01 23:57:02.785 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SFO1 from 104.2585990 to 104.258599>)
+(  10,<2022-06-01 23:57:02.858 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW to 95.9153>)
+(  11,<2022-06-01 23:57:02.861 +0200>,<trebosc>,<trebosc-Latitude-7390>,<dataserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SW from 67.7050 to 95.9153498696>)
+(  12,<2023-11-14T14:40:16.675+0100>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.3.0>,
+      <changed status parameter F1 SW to 95.9153>)
+##END=
+
+$$ hash MD5
+$$ D2 A3 0E F5 A9 16 81 8E 64 4E 8B 8F 29 E3 DE ED

@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.1.4
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 4	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= solidnmr
+$$ 2023-06-17 17:21:16.841 +0200  solidnmr@CZC1249Y47
+$$ /opt/nmrdata/data_CNRS/solidnmr_2023/900.JT-230612/16/pdata/1/assocs
+$$ process /opt/topspin4.1.4/prog/mod/dataserver
+##$MULTDISP= </opt/nmrdata/data_CNRS/solidnmr_2023/900.JT-230612/17/pdata/1>
+##END=

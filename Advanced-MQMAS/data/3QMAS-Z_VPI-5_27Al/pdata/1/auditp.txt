@@ -1,0 +1,151 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= trebosc
+$$ /home/trebosc/NMR/data/RMN400sNEO/nmr/400.MOOC-200228/33/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-03-02 09:25:43.436 +0000>,<root>,<BladeEpu>,<go4>,<TopSpin 4.0.8>,
+      <created by zg on 'Av Neo 400s' (rmn400s) by user 'servicermn'
+       on data set with UUID 'a27c7418-5c61-11ea-9419-001395379d89'
+       started at 2020-03-02 08:41:39.685 +0000, POWCHK enabled, PULCHK disabled,
+       terminated by command 'stop' at 2020-03-02 09:25:43.435 +0000
+       configuration hash MD5:
+       09 F1 08 36 DD 61 96 89 C7 94 37 85 FA 9B DE 48
+       double data hash MD5: 5000 * 196
+       3F 1B 85 59 D2 68 13 84 56 25 70 32 79 07 45 0F>)
+(   2,<2020-03-09 02:15:08.684 +0100>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.0.8>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(   3,<2022-05-29 22:55:16.517 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(   4,<2022-05-29 22:55:34.809 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 SR to 833.55>)
+(   5,<2022-05-29 22:55:34.884 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SR to 833.55>)
+(   6,<2022-05-29 22:55:37.170 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(   7,<2022-06-01 14:17:35.134 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(   8,<2022-06-01 14:19:36.003 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xf2 same raw n F2: TDeff = 2500 SI = 8K FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K
+       data hash MD5: 8K * 1K
+       D9 04 87 DA 75 C9 DE 42 F5 63 7E 53 1C DC 33 25>)
+(   9,<2022-06-01 14:19:36.153 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <abs2 F2: ABSG = 5 ABSF1 = 120.7761 ABSF2 = -142.7846
+       data hash MD5: 8K * 1K
+       FC 61 4C 96 1C F8 9C E6 20 44 11 00 7A BC FF 87>)
+(  10,<2022-06-01 14:19:36.271 +0200>,<trebosc>,<trebosc-Latitude-7390>,<xfshear>,<TopSpin 4.1.4>,
+      <xfshear: F1 shift 0 ppm
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  11,<2022-06-01 14:19:36.463 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xht2
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  12,<2022-06-01 14:19:36.571 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xif2 F2: FT_mod = 2
+       data hash MD5: 8K * 1K
+       E0 58 EE 6A 0E 8A 8B CA 8D 2B 38 44 92 A2 FF F2>)
+(  13,<2022-06-01 14:19:37.088 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xfb same F2: WDW = 1 LB = 50 FT_mod = 6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       88 1C 52 D1 84 E0 25 75 E8 75 A9 AD 48 99 1B 99>)
+(  14,<2022-06-01 23:57:07.539 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed parameter F1 SR to 833.55>)
+(  15,<2022-06-01 23:57:07.544 +0200>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.1.4>,
+      <changed status parameter F1 SR to 833.55>)
+(  16,<2022-06-01 23:57:11.789 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(  17,<2022-06-02 00:04:18.507 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(  18,<2022-06-02 00:36:47.311 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xf2 same raw n F2: TDeff = 2500 SI = 8K FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K
+       data hash MD5: 8K * 1K
+       D9 04 87 DA 75 C9 DE 42 F5 63 7E 53 1C DC 33 25>)
+(  19,<2022-06-02 00:36:47.544 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <abs2 F2: ABSG = 5 ABSF1 = 120.7761 ABSF2 = -142.7846
+       data hash MD5: 8K * 1K
+       FC 61 4C 96 1C F8 9C E6 20 44 11 00 7A BC FF 87>)
+(  20,<2022-06-02 00:36:47.711 +0200>,<trebosc>,<trebosc-Latitude-7390>,<xfshear>,<TopSpin 4.1.4>,
+      <xfshear: F1 shift 0 ppm
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  21,<2022-06-02 00:36:48.053 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xht2
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  22,<2022-06-02 00:36:48.253 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xif2 F2: FT_mod = 2
+       data hash MD5: 8K * 1K
+       E0 58 EE 6A 0E 8A 8B CA 8D 2B 38 44 92 A2 FF F2>)
+(  23,<2022-06-02 00:36:49.559 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xfb same F2: WDW = 1 LB = 50 FT_mod = 6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       88 1C 52 D1 84 E0 25 75 E8 75 A9 AD 48 99 1B 99>)
+(  24,<2022-06-02 08:05:55.063 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(  25,<2022-06-02 13:59:02.400 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xf2 same raw n F2: TDeff = 2500 SI = 8K FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K
+       data hash MD5: 8K * 1K
+       D9 04 87 DA 75 C9 DE 42 F5 63 7E 53 1C DC 33 25>)
+(  26,<2022-06-02 13:59:02.526 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <abs2 F2: ABSG = 5 ABSF1 = 120.7761 ABSF2 = -142.7846
+       data hash MD5: 8K * 1K
+       FC 61 4C 96 1C F8 9C E6 20 44 11 00 7A BC FF 87>)
+(  27,<2022-06-02 13:59:02.640 +0200>,<trebosc>,<trebosc-Latitude-7390>,<xfshear>,<TopSpin 4.1.4>,
+      <xfshear: F1 shift 0 ppm
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  28,<2022-06-02 13:59:02.838 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xht2
+       data hash MD5: 8K * 1K
+       BC 5B 5C 04 BF C9 C8 88 6B C5 71 54 79 D8 F3 9A>)
+(  29,<2022-06-02 13:59:02.949 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xif2 F2: FT_mod = 2
+       data hash MD5: 8K * 1K
+       E0 58 EE 6A 0E 8A 8B CA 8D 2B 38 44 92 A2 FF F2>)
+(  30,<2022-06-02 13:59:03.755 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <xfb same F2: WDW = 1 LB = 50 FT_mod = 6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       88 1C 52 D1 84 E0 25 75 E8 75 A9 AD 48 99 1B 99>)
+(  31,<2022-06-02 19:49:22.891 +0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.1.4>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(  32,<2023-10-19T18:27:43.288+0200>,<trebosc>,<trebosc-Latitude-7390>,<proc2d>,<TopSpin 4.3.0>,
+      <Start of raw data processing
+       xfb F2: TDeff = 2500 SI = 8K WDW = 1 LB = 50 FT_mod = 6 PKNL = 1 PHC0 = 82.50546 PHC1 = -425.6 F1: TDeff = 120 SI = 1K WDW = 1 LB = 0.3 FT_mod = 4 FCOR = 0.5 PHC0 = 6.61875 PHC1 = -9.6
+       data hash MD5: 8K * 1K
+       16 EC CA E1 AB 8E DC 88 C5 1B DD 04 5E 5C 88 95>)
+(  33,<2023-11-14T14:40:45.486+0100>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.3.0>,
+      <changed parameter F1 SF to 104.2569325>)
+(  34,<2023-11-14T14:41:07.405+0100>,<trebosc>,<trebosc-Latitude-7390>,<cprserver>,<TopSpin 4.3.0>,
+      <changed parameter F1 SF to 104.2535996>)
+##END=
+
+$$ hash MD5
+$$ F8 04 7D EE 03 90 60 D5 9A F7 D0 30 1E C9 5E 0E

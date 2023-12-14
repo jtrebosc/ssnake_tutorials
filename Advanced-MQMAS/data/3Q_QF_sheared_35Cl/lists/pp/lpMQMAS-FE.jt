@@ -1,0 +1,106 @@
+; lpMQMAS-FE.jt
+; 2D split-t1 full-echo low-power 3QMAS experiment
+; Proper ZGOPTNS selecting spin must be set for split-t1
+; -------------------------------------------------------
+;ns : 48*n
+;p1 : CT soft 90 pulse at PL1
+;p7 : ST inversion pulse at SP7
+;d0 : initial t1 value
+;d1 : recycle delay
+;d5 : delay to allow full echo to build up
+;in0 : =rotor period for rotor-synchronized experiment
+;pl1 : CT 90 power level
+;sp7 : ST1 inversion power level
+;spnam7 : shape irradiating ST1 transition (DFS, WURST or square with offset...)
+;spoffs7 : shape offset : depends on shape type
+;cnst31 : MAS spin rate [Hz]
+;FnMODE : QF
+;zgoptns : -DS32 -DS52 -DS72 -DS92 -D_DFS  -DPRESAT
+
+#ifdef PRESAT
+#include "presat.incl"
+#else
+#define PRESAT1(f1)
+#define presatPH
+#endif
+
+#ifdef decF2
+#define tppm
+#include "decouple.incl"
+#define decF2on cpds2:f2
+#define decF2off do:f2
+#else
+#define decF2on
+#define decF2off 
+#endif
+
+
+define delay showInASED
+
+#ifdef _DFS
+;p8 DFS/HS pulse
+;cnst1 : (kHz) Start DFS sweep freq. 
+;cnst2 : (kHz) End DFS sweep freq. 
+;cnst3 : (ns) time resolution of shape sp1
+;spoffs8 HS only offset  (spoffs1 < 1/cnst3)
+;spnam8 DFS/HS shape : use HS.jt of DFS.jt to regenerate
+;sp8 DFS/HS shape power
+"showInASED=cnst1+cnst2+cnst3+cnst31"
+#define DFSpulse (5u p8:sp8 ph0 5u):f1 
+#else
+#define DFSpulse
+"showInASED=0"
+#endif
+
+
+"p7=1s/cnst31"
+"d0=0"
+"d7=0"
+"in0=inf1"
+
+#ifdef S32
+;d7 : = 0 (CURRENT option spin 3/2)
+"in5=in0*7/9"
+"in7=0"
+#elif S52
+;d7 : = 0 (CURRENT option spin 5/2)
+"in5=0"
+"in7=in0*19/12"
+#elif S72
+;d7 : = 0 (CURRENT option spin 7/2)
+"in5=0"
+"in7=in0*101/45"
+#elif S92
+;d7 : = 0 (CURRENT option spin 9/2)
+"in5=0"
+"in7=in0*91/36"
+#else
+"in5=0"
+"in7=0"
+#endif
+
+
+1 ze
+"showInASED=0"
+  2 d1 decF2off
+    DFSpulse 
+    (1u pl1 ph1):f1
+    (p1 pl1 ph1):f1
+    (p7:sp7 ph1):f1
+    d0 decF2on
+    (p7:sp7 ph2):f1
+    d5
+    (p1*2 ph3 pl1):f1
+    d7 
+  go=2 ph31 
+  1u decF2off
+
+  10m mc #0 to 2 F1QF(caldel(d0, +in0)&caldel(d5, +in5)&caldel(d7, +in7))
+exit
+
+ph0= 0 
+;p=0->+3->+1->-1
+ph1=(12) 0 1 2 3 4 5 6 7 8 9 10 11
+ph2=0
+ph3={0}*12 {1}*12 {2}*12 {3}*12
+ph31={0 3 2 1 0 3 2 1 0 3 2 1}^2

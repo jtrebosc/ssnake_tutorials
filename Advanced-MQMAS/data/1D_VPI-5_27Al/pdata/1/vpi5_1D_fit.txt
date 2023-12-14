@@ -1,0 +1,29 @@
+################
+# ssNake v1.4b #
+################
+#
+# Fit: Quadrupole
+# Saved: 22-06-02 01:11:44
+# Data: vpi5_1D
+# Trace: (*)
+# Dimension: D1
+# Units: ppm
+# Excluded: [[[4964.790096342395, 3271.0645104049445]]]
+# Excluded: invert 
+#
+#! I=5/2
+#! MAS=Finite MAS
+#! Satellites=True
+#! Cheng=15
+#! Angle=arctan(sqrt(2))
+#! Sidebands=256
+#
+#? Offset               Multiplier           Spinspeed            
+  *0.000               *1.000e+16           *10.00               
+
+#? Position             Cq                   eta                  Integral             Lorentz              Gauss                LorentzST            
+  *-10.10              *3.448               *0.8992               0.2841              *168.4               *0.000               *('Lorentz',0,1.0,0.0,0) 
+  *41.74               *1.274               *0.4267               0.2881               160.2               *0.000               *('Lorentz',1,1.0,0.0,0) 
+  *43.69               *2.292               *0.8697               0.3227               160.9               *0.000               *('Lorentz',2,1.0,0.0,0) 
+  
+####################################################################################################

@@ -1,0 +1,146 @@
+# 1 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+; lpMQMAS-FE.jt
+; 2D split-t1 full-echo low-power 3QMAS experiment
+; Proper ZGOPTNS selecting spin must be set for split-t1
+; -------------------------------------------------------
+;ns : 48*n
+;p1 : CT soft 90 pulse at PL1
+;p7 : ST inversion pulse at SP7
+;d0 : initial t1 value
+;d1 : recycle delay
+;d5 : delay to allow full echo to build up
+;in0 : =rotor period for rotor-synchronized experiment
+;pl1 : CT 90 power level
+;sp7 : ST1 inversion power level
+;spnam7 : shape irradiating ST1 transition (DFS, WURST or square with offset...)
+;spoffs7 : shape offset : depends on shape type
+;cnst31 : MAS spin rate [Hz]
+;FnMODE : QF
+;zgoptns : -DS32 -DS52 -DS72 -DS92 -D_DFS  -DPRESAT
+
+
+# 1 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl" 1
+;$COMMENT=decoupling relations
+;$CLASS=Solids INCL
+;$DIM=
+;$TYPE=decoupling
+;$SUBTYPE=
+;$OWNER=Trebosc
+; decoupling include file *****************************
+
+# 19 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;---
+
+# 27 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;---
+
+
+# 34 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;--- untested sequences ---
+
+
+# 40 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;---
+
+
+# 44 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;---
+# 54 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/decouple.incl"
+;---
+
+
+# 30 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt" 2
+# 38 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+define delay showInASED
+
+
+;p8 DFS/HS pulse
+;cnst1 : (kHz) Start DFS sweep freq. 
+;cnst2 : (kHz) End DFS sweep freq. 
+;cnst3 : (ns) time resolution of shape sp1
+;spoffs8 HS only offset  (spoffs1 < 1/cnst3)
+;spnam8 DFS/HS shape : use HS.jt of DFS.jt to regenerate
+;sp8 DFS/HS shape power
+"showInASED=cnst1+cnst2+cnst3+cnst31"
+# 56 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+"p7=1s/cnst31"
+"d0=0"
+"d7=0"
+"in0=inf1"
+
+
+;d7 : = 0 (CURRENT option spin 3/2)
+"in5=in0*7/9"
+"in7=0"
+# 81 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+# 1 "mc_line 83 file /root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt exp. def. part of mc cmd. before ze"
+; dimension 2D; AQ_mode  (F1) QF
+define delay MCWRK
+define delay MCREST
+define delay d0orig
+"d0orig=d0"
+define delay d5orig
+"d5orig=d5"
+define delay d7orig
+"d7orig=d7"
+define loopcounter t1loop
+"t1loop=0"
+define loopcounter ph1loop
+"ph1loop=0"
+define loopcounter F1CNT
+"F1CNT = min( 1 , td1)"
+define loopcounter ST1CNT
+"ST1CNT = max( 1 , trunc(td1 / 1))"
+"MCREST = d1 - 10m"
+"MCWRK = 0.500000*10m"
+# 83 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+# 83 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+1 ze
+# 1 "mc_line 83 file /root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt exp. def. of mc cmd. after ze"
+LBLAV, MCWRK
+      "d0=d0orig + t1loop * in0 "
+      "d5=d5orig + t1loop * in5 "
+      "d7=d7orig + t1loop * in7 "
+# 84 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+"showInASED=0"
+# 1 "mc_line 85 file /root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt exp. start label for mc cmd."
+2 MCWRK  do:f2
+LBLST1, MCWRK 
+  MCREST
+# 86 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+    (5u p8:sp8 ph0 5u):f1 
+    (1u pl1 ph1):f1
+    (p1 pl1 ph1):f1
+    (p7:sp7 ph1):f1
+    d0 cpds2:f2
+    (p7:sp7 ph2):f1
+    d5
+    (p1*2 ph3 pl1):f1
+    d7 
+  go=2 ph31 
+  1u do:f2
+
+# 1 "mc_line 98 file /root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt exp. mc cmd. in line"
+  MCWRK  wr #0 if #0 zd 
+
+  "t1loop+=1 * (1 - kronecker_delta(1 , td1) )"
+      "d0=d0orig + t1loop * in0 "
+      "d5=d5orig + t1loop * in5 "
+      "d7=d7orig + t1loop * in7 "
+  lo to LBLST1 times ST1CNT
+  MCWRK 
+  "t1loop=0"
+  MCWRK rf #0
+  lo to LBLAV times tdav
+# 99 "/root/.topspin-BladeEpu/local_acqu/900.JT-230612/16/lists/pp/lpMQMAS-FE.jt"
+exit
+
+ph0= 0 
+;p=0->+3->+1->-1
+ph1=(12) 0 1 2 3 4 5 6 7 8 9 10 11
+ph2=0
+ph3={0}*12 {1}*12 {2}*12 {3}*12
+ph31={0 3 2 1 0 3 2 1 0 3 2 1}^2

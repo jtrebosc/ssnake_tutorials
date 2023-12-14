@@ -1,0 +1,15 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= servicermn
+$$ /opt/nmrdata/2020/UCCS/400.MOOC-200228/33/pdata/999/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-02-28 19:42:44.869 +0100>,<servicermn>,<rmn400s>,<mvrow>,<TopSpin 4.0.8>,
+      <rsr 835 from
+       1 33 "400.MOOC-200228" "/opt/nmrdata/2020/UCCS"
+       data hash MD5: 8K
+       08 57 52 DE 1A 2F CB FC 15 52 2C 3E B9 CC 1D 4A>)
+##END=
+
+$$ hash MD5
+$$ 09 B7 CE 90 5E 6A EC 84 C0 E1 EE 66 B3 BA B8 42

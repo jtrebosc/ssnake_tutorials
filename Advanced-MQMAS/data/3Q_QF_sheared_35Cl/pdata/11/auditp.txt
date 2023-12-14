@@ -1,0 +1,15 @@
+##TITLE= Audit trail, TopSpin 4.1.4
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= solidnmr
+$$ /opt/nmrdata/data_CNRS/solidnmr_2023/900.JT-230612/16/pdata/11/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-06-15 18:41:29.875 +0200>,<solidnmr>,<CZC1249Y47>,<mvrow>,<TopSpin 4.1.4>,
+      <rsr 103 from
+       1 16 "900.JT-230612" "/opt/nmrdata/data_CNRS/solidnmr_2023"
+       data hash MD5: 2K
+       96 FF BA F8 26 60 A8 EC 15 9E 1D DA A8 03 6F 1E>)
+##END=
+
+$$ hash MD5
+$$ BB 98 F7 9A F8 A3 49 41 6D 15 E5 6C BD 34 67 93

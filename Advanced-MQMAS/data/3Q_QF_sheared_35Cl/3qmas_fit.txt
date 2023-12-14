@@ -1,0 +1,30 @@
+################
+# ssNake v1.5b #
+################
+#
+# Fit: MQMAS
+# Saved: 24-01-04 18:03:49
+# Data: 3qmas
+# Trace: (*, *)
+# Dimension: D2
+# Units: ppm
+# Excluded: [[[12640.842999995175, 15863.499249996912], [3139.30400569737, 1186.1790056973691]]]
+# Excluded: invert 
+#
+#! I=3/2
+#! MQ=3
+#! Shear=-7.0/9.0
+#! ScaleSW=1
+#! Cheng=15
+#! MAS=Infinite MAS
+#! Angle=arctan(sqrt(2))
+#! Sidebands=32
+#! FoldF1=False
+#
+#? Offset               Multiplier           Spinspeed            
+  *0.000               *1.000e+15           *10.00               
+
+#? Position             Gauss                Cq                   eta                  Integral             Lorentz              Lorentz1             
+   36.41               *0.2000               1.748                0.6783               9.395               *50.00                148.7               
+  
+####################################################################################################

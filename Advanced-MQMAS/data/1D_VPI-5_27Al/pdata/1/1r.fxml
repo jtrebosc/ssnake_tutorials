@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NMRFit>
+	<FitParameters>
+		<timestamp>2020-02-28T17:01:39Z</timestamp>
+		<DMFitVersion>20200113</DMFitVersion>
+		<FitMode>0</FitMode>
+		<FitModeAsc>Fit 1D</FitModeAsc>
+		<ComputeParam>
+			<ShapeSize>4096</ShapeSize>
+			<npasab>64</npasab>
+			<ssbMax>10</ssbMax>
+			<QuadStep>5</QuadStep>
+			<EtaStep>5</EtaStep>
+			<CSAStep>15</CSAStep>
+			<MinCSAStep>50</MinCSAStep>
+			<GaussMult>0.75</GaussMult>
+			<SWMult>4</SWMult>
+		</ComputeParam>
+		<Dimension>F2
+			<nucleus>27Al</nucleus>
+			<frequency>104.2569325</frequency>
+			<spinrate>10000</spinrate>
+			<line>
+				<ModelName>int2QUAD</ModelName>
+				<amp Fix="*"  Error="679425.80387">134395232.2</amp>
+				<pos Fix="*"  Unit="ppm" Error="0.01326">-9.444367208</pos>
+				<gl>0</gl>
+				<tr>1</tr>
+				<em_au Fix="*"  Error="4.26079">219.1855628</em_au>
+				<lb  Unit="ppm">2.102359598</lb>
+				<dCS  Unit="ppm">0</dCS>
+				<etaCS>0</etaCS>
+				<Phi>0</Phi>
+				<Chi>0</Chi>
+				<Psi>0</Psi>
+				<CQ>3500</CQ>
+				<etaQ>0.9</etaQ>
+			</line>
+			<line>
+				<ModelName>CzSimple</ModelName>
+				<amp Fix="*"  Error="1253399.56300">101028772.3</amp>
+				<pos Fix="*"  Unit="ppm" Error="0.06199">11.66081946</pos>
+				<gl>0</gl>
+				<dCS Fix="*"  Unit="ppm" Error="0.21834">4.930753129</dCS>
+				<em_au>-700</em_au>
+				<lb  Unit="ppm">-15.87879874</lb>
+				<CQ Fix="*" >3700</CQ>
+				<d>5</d>
+				<sCZ_CQ>1850</sCZ_CQ>
+				<CQ_max>3700</CQ_max>
+			</line>
+		</Dimension>
+	</FitParameters>
+	<GraphParameters>
+		<GrDimension>F2
+			<min>12143.13895</min>
+			<max>-23532.26454</max>
+			<tic>0</tic>
+		</GrDimension>
+	</GraphParameters>
+	<DataFile>
+		<FileName>Z:\opt\nmrdata\2020\UCCS\400.MOOC-200228\22\pdata\1\1r</FileName>
+		<FileTitle>27Al AlPO4-VPI5</FileTitle>
+	</DataFile>
+</NMRFit>

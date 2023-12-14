@@ -1,0 +1,43 @@
+##TITLE= Audit trail, TopSpin 4.1.1
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= root
+$$ /root/.topspin-BladeEpu/local_acqu/iProbeCPtest20210109/22/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-01-10 07:15:22.446 +0000>,<CZC849701S\root>,<CZC849701S>,<go4>,<TopSpin 4.1.1>,
+      <acquisition in progress>)
+$$ C:/Users/root/Documents/HK/iProbeCPtest20210109/22/audita.txt
+(   2,<2021-01-10 07:33:08.407 +0000>,<CZC849701S\root>,<CZC849701S>,<go4>,<TopSpin 4.1.1>,
+      <created by zg on 'Avance' (CZC849701S) by user 'CZC849701S\root'
+       on data set with UUID '9a4ab396-5313-11eb-abbb-0013952d335c'
+       started at 2021-01-10 07:15:22.480 +0000, POWCHK disabled, PULCHK disabled,
+       completed at 2021-01-10 07:33:08.406 +0000
+       configuration hash MD5:
+       F7 48 52 CA A1 C0 43 D6 27 69 11 C1 FF FD AC 7E
+       double data hash MD5: 1K * 128
+       DE D7 96 F3 47 6A 14 EE B2 FB 06 06 A8 35 37 DD>)
+(   3,<2021-01-10 16:33:01.534 +0900>,<root>,<CZC849701S>,<sertoint>,<TopSpin 4.1.1>,
+      <sertoint
+       data hash MD5: 1K * 128
+       20 6A FE 69 C3 40 A1 E6 67 D8 15 89 FD 7D E5 5C>)
+(   4,<2021-01-10 08:28:22.745 +0000>,<CZC849701S\root>,<CZC849701S>,<go4>,<TopSpin 4.1.1>,
+      <raw data deleted by zg>)
+(   5,<2021-01-10 08:28:22.751 +0000>,<CZC849701S\root>,<CZC849701S>,<go4>,<TopSpin 4.1.1>,
+      <acquisition in progress>)
+(   6,<2021-01-10 08:46:06.241 +0000>,<CZC849701S\root>,<CZC849701S>,<go4>,<TopSpin 4.1.1>,
+      <created by zg on 'Avance' (CZC849701S) by user 'CZC849701S\root'
+       on data set with UUID 'cd28792e-531d-11eb-a35b-0013952d335c'
+       started at 2021-01-10 08:28:22.785 +0000, POWCHK disabled, PULCHK disabled,
+       completed at 2021-01-10 08:46:06.240 +0000
+       configuration hash MD5:
+       F7 48 52 CA A1 C0 43 D6 27 69 11 C1 FF FD AC 7E
+       double data hash MD5: 1K * 128
+       76 02 5F 4F A5 AD 50 2C 1E 90 EE AC B5 ED E7 73>)
+(   7,<2021-01-10 17:45:58.876 +0900>,<root>,<CZC849701S>,<sertoint>,<TopSpin 4.1.1>,
+      <sertoint
+       data hash MD5: 1K * 128
+       E9 A3 19 72 29 81 DE 5B 6A CB FE F1 0B C2 B0 BA>)
+##END=
+
+$$ hash MD5
+$$ 75 A5 8D 59 DF 7B 71 F8 FB 22 42 C0 16 00 63 AB
