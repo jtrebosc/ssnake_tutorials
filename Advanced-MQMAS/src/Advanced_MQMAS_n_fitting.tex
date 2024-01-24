@@ -76,6 +76,7 @@
 \section{Introduction}
 This tutorial will make a review of MQMAS experiment principles and will present several ways to process and fit 
 Multiple Quantum Magic Angle spinning (MQMAS) NMR data using ssNake.
+We will present several representation of MQMAS (or STMAS) spectra: unsheared (3Q/SQ)/sheared/Q-sheared.
 The tutorial delivered with the ssNake program is considered as prior knowledge and having done MQMAS tutorial is advized.
 If you have not yet studied this, please do so before continuing with these examples.
 
@@ -158,7 +159,7 @@ slope is scaled (due to shearing operation) and is 1 only when both axis are in 
 \subsection{Split-t1 experiments}
 Split-t1 MQMAS experiments are designed to refocus the second order quadrupolar anisotropy at a fix time in D2.
 This corresponds to applying a shearing processing operation. It is usually done by defining a delay $\tau$, on $\pm 1Q$ quantum
-level, which duration depends on t1 (pQ coherence evolution) such that $\tau = R \cdot t_1$ before the acquisition during $t_2$.
+level, which duration depends on $t_1$ (pQ coherence evolution) such that $\tau = R \cdot t_1$ before the acquisition during $t_2$.
 
 Therefore, one just need to deal with such experiment just the same as a pQMAS experiment. The experiment does not need be sheared, 
 and should be scaled as pQMAS experiment with $t_1$ evolution defined as evolution time on $pQ$. 
@@ -185,6 +186,7 @@ In this tutorial we will use several datasets:
 \end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Z-Filter MQMAS processing}
 First, we will look into the processing of MQMAS data recorded using a Z-Filter experiment (also called three pulse MQMAS).
 Note that data recorded with a regular two pulse MQMAS (the standard MQMAS experiment) can be processed in the same way.
@@ -216,20 +218,24 @@ The FID should now look like this:
 %\includegraphics[width=0.8\linewidth]{Figs/Fig1.png}
 \end{center}
 
+Continue with the following processing steps.
 \begin{itemize}
-  \item Zero-fill (Matrix $\longrightarrow$  Sizing) 2048 points. (actual FID will be truncated).
-  \item Fourier Transform D2, and phase the first slice.
-  \item Set the view to D1 (sideframe, radiobutton).
-  \item Processing of the indirect dimension D1 (zerofill, Fourier, apodize, phase).
+  \item Zero-fill (Matrix $\longrightarrow$  Sizing) 2048 points. (FID will be shortened).
+  \item Fourier Transform D2 (ctrl-F shortcut), and phase the first slice.
+  \item Optional baseline correction in D2 (`Tools' $\longrightarrow$ `Baseline Correction') + Hilbert transform or HT
+      (`Transform' $\longrightarrow$ `Hilbert Transform'). HT is required after operations that only affect the real part
+       but not the imaginary.
+  \item Set the view to D1 (in sideframe radiobutton).
+  \item Processing of the indirect dimension D1 (zerofilling 512 points, apodizing (50~Hz Lorenztian broadening), Fourier transform, phasing).
 \end{itemize}
 
-At that point we have several options for processing:
+At that point we have several options for processing\label{choice}:
 \begin{itemize}
   \item whether to shear the spectrum.
   \item whether to scale the spectral width or the carrier and reference frequencies in the indirect dimension.
 \end{itemize}
 
-\subsection{3Q-1Q representation}
+\subsection{3Q-1Q representation} \label{_3Q1Q}
 First we can choose to represent the spectrum in 3Q-1Q scale. To do that we need to adjust the reference frequency to $3 \cdot Ref - 2 \cdot Car$
 where Ref is D2 dimension reference frequency and Car is the carrier frequency in D2 (and D1). Indeed this will ensure that the center 
 of the spectrum will correspond to ppm coordinates $(F1, F2)= (p, 3p)$.
@@ -240,7 +246,7 @@ Copy (crtl-C) the carrier frequency shown in D2 dimension.
 Select dimension D1
 Paste the Carrier Frequency from D2.
 Go to menu `Tools' $\longrightarrow$ `Reference' $\longrightarrow$ `Apply'. Select `D2'.
-Go to menu `Tools' $\longrightarrow$ `Reference' $\longrightarrow$ `Set Reference', then apply the operation $3 Ref - 2 Car$ for 
+Go to menu `Tools' $\longrightarrow$ `Reference' $\longrightarrow$ `Set Reference', then apply the operation $3 \cdot Ref - 2 \cdot Car$ for 
 the reference frequency (There you can also `Paste' the Carrier frequency that was copied above to write the equation).
 
 This results in the following spectrum:
@@ -248,7 +254,8 @@ This results in the following spectrum:
 %\includegraphics[width=0.8\linewidth]{Figs/Fig2.png}
 \end{center}
 
-One can fit such spectrum with MQMAS model. There are 3 sites with main parameters summarized in table \ref{table:AlPO_vpi5_sites}.
+One can fit such spectrum with MQMAS model. There are 3 sites with main parameters summarized in table \ref{table:AlPO_vpi5_sites}. The fourth site
+at about 5~ppm is actually an impurity that will not be considered in the following.
 
 \begin{center}\label{table:AlPO_vpi5_sites}
   \begin{tabular}{c|c c c} 
@@ -262,287 +269,63 @@ One can fit such spectrum with MQMAS model. There are 3 sites with main paramete
   \end{tabular}
 \end{center}
 
-Now, we should process the indirect dimension (D1):
-\begin{itemize}
-	\item Switch to D1 (sideframe, radiobutton), and select data point 614 in D2.
-	\item Perform a complex conjugate (Tools $\longrightarrow$ Complex Conjugate)\footnote{The Varian data
-	  we loaded has a different complex definition, so a conjugate in the indirect dimension is
-	required (this depends on how the pulse sequence was programmed).}
-\end{itemize}
-This result in:
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig3.png}
-\end{center}
+Open a MQMAS fitting window (menu `Fitting' $\longrightarrow$ `MQMAS'). You can then import `3QMAS-Z\_unsheared\_fit.txt' file.
 
-Now we should apply some zerofilling etc.:
-\begin{itemize}
-	\item Set the size to 1024 points (Matrix $\longrightarrow$ Sizing)
-	\item Fourier Transform
-\end{itemize}
-This reesults in this spectrum along D1 for this trace:
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig4.png}
-\end{center}
-The phase looks good, so we do not need to apply any phasing.
+If you click on `Sim' button you won't see any simulated curve. The reason is that all correlations that are visible are 
+folded. To be able to simulate these sites one needs to enable folded sites. This is done by checking the `D1 Fold' check 
+button. Click on `Sim' again and all sites should be appear correctly.
 
-We have now processed both dimensions, so we can view the data as a contour plot:
-\begin{itemize}
-	\item Switch to D2 (sideframe, radiobutton)
-	\item Change the view to a contour plot: Plot  $\longrightarrow$ Contour
-\end{itemize}
-We now have:
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig5.png}
-\end{center}
-And zoomed:
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig6.png}
-\end{center}
-Note that the right projection was changed to `Max' instead of the standard `Sum'.
-This results in a skyline projection, which is affected less by the noise regions of the data.
+\subsection{Q-shearing}
 
-As can be seen, the different powder patterns are all tilted.
-This is expected for a Z-Filter MQMAS, and can be corrected by shearing the spectrum.
-\begin{itemize}
-	\item Shear via Matrix $\longrightarrow$ Shearing, using the `Spin 3/2, -3Q' setting, and
-	  direction `1' and axis '2'
-\end{itemize}
-This results in (zoomed):
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig7.png}
-\end{center}
-Which is a nice spectrum! This is the final figure, we now only need to fix the axes.
+However folded spectra are not quite easily understandable. Q-shearing operation will allow to unfold the spectrum. The principle is 
+to shear the spectrum  to align the chemical shift axis horizontally. After shearing the peaks won't be folded anymore (unless the 
+SW is too small to accomodate for the C$_\text{Q}$ spread). Then one zerofills in the frequency domain to obtain an apparent SW three 
+times larger. One can then shear back to an unfolded regular 3Q/1Q spectrum.
 
-By processing the spectrum in this way, we have removed the second order quadrupolar broadening from the indirect dimension.
-This dimension is therefore referred to as the isotropic dimension.
-The position along this axis is determined by the scaled isotropic chemical shift, and the scaled quadrupole induced shift.
-However, it is more convenient to have a frequency axis which shows the unscaled isotropic chemical shift.
-To accomplishing this, we must scale the spectral width by a specific value (which depends on the spin quantum number and the MQ transition of the experiment).
-\begin{itemize}
-	\item Switch to D1 (sideframe, click on the upper left radiobutton)
-	\item Use Tools  $\longrightarrow$ Scale SW, and select `Spin 3/2, -3Q' and apply
-\end{itemize}
-Now, we have scaled the axis.
-As a last step, we should apply the chemical shift reference.
-This was determined using a rubidium nitrate solution.
-Based on this the 0 ppm frequency is at: 196.3182865 MHz.
-\begin{itemize}
-  \item Set the reference via Tools $\longrightarrow$ Reference $\longrightarrow$ Set Reference, and
-	 put `196.3182865' in the Frequency box
-	\item Switch to D2 (sideframe, click on the lower left radiobutton)
-	\item Set the reference in the same way
-\end{itemize}
-The final spectrum should now look like this (zoomed):
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig8.png}
-\end{center}
-This spectrum is also delivered with this tutorial, and named `Rb87\_3Q\_Zf\_(final\_spectrum).mat'.
-Note that I extracted the relevant region before saving (to reduce size of the file).
- 
-Now, we can fit this spectrum.
-Either by fitting a specific trace with a regular second order quadrupolar line, or by fitting the entire MQMAS spectrum.
-Another alternative is to only determine the isotropic shift and the quadupolar product $P_\text{Q} = C_\text{Q}\sqrt{1+\eta^2/3}$.
-For this, we must determine the Centre of Mass for each site, in both D1 and D2.
-This can be done by going to the relevant trace, and using Fitting  $\longrightarrow$ Centre of Mass.
-Note that in D1, the peaks are symmetric, so the highest point is the centre in this case.
+To do this proceed as such:
+\begin{enumerate}
+\item Shear the spectrum: Menu `Matrix' $\longrightarrow$ `Shearing'. Set `User defined' shearing constant to $-3$. \\
+The line at $-20$~ppm is too close to the bottom edge and almost aliased. We need to shift the spectrum up a little bit.
+\item Select D1 dimension then menu `Matrix' $\longrightarrow$ `Roll'. Roll to the right by 30 points.\\
+Now we will pad the spectrum with zeroes on both sides. This will be done by regriding the spectrum in D1. 
+To make things easier, we will extend spectrum each side by one SW. So check that displayed unit is kHz.\\
+3) Check that D1 unit is kHz and copy the current sweepwidth dispayed in kHz.\\
+\item select menu `Matrix' $\longrightarrow$ `Regrid'. substract SW to the `Min [kHz]' and add SW to the `Max [kHz]. 
+This will result in a new sweepwdith three times larger. To keep the spacing between two subsequent points (Hz per point)
+ we need to multiply the number of point by three:  `\# of points' 256*3.\\
+\item We should revert the spectrum shift done in step 2. Since we kept the spacing per point the same, we can simply
+use the same tool: Roll to the left by 30 point ($-30$ in the Roll entry).\\
+\item At that point one should apply a Hilbert transform (HT). Indeed, shearing requires the use of imaginary part. And the 
+imaginary part that contains the dispersive peaks is initialy truncated (does not fit within the initial SW) then 
+padded with zeros. One hence need to rebuild the imaginary signal in the zerofilled spectrum parts.\\
+\item We can now unshear, reverting the shear done in step 1) using a  `User defined' shearing constant of $+3$.\\
+\end{enumerate}
 
-\begin{center}
-  \begin{tabular}{c|cc| c c}
-	 \toprule
-	 Site & $\delta_1$ [ppm]& $\delta_2$ [ppm]& $\delta_\text{iso}$ [ppm]& $P_\text{Q}$ [MHz]  \\
-	 \midrule
-	 1 & $-30.5$ & $-34.17$ & $-31.86$ & 1.89 \\
-	 2& $-26.8$ &$-31.96$  &$-28.71$ & 2.24\\
-	 3& $-26.3$ &$-29.76$ & $-27.58$ & 1.83 \\
-	\bottomrule
-  \end{tabular}
-\end{center}
-The last two columns have been calculated using the MQMAS Extraction utility (see the Utilities menu). 
+TADA!
+
+\subsection{Sheared (isotropic) representation}
+Another more common representation is to shear the spectrum in order to display purely isotropic information on D1 axis. Any 
+second order quadrupolar broadening is only in D2 direct MAS dimension. Isotropic information corresponds to isotropic chemical
+shift and second order quadrupolar induced shift (also called QIS).
+
+For this processing we'll start from the common processing described in \ref{choice} (right before \ref{_3Q1Q}).
+
+\begin{enumerate}
+  \item Let's shear the spectrum using menu `Matrix $\longrightarrow$ Shearing'. One can choose the preselected ratio
+from the Drop down menu `spin 5/2, 3QMAS'.
+  \item Now one should scale SW: `Tools $\longrightarrow$ Scale SW'. Use the same drop down menu choice.
+\end{enumerate}
+
+The spectrum is sheared and scaled. For fitting (menu `Fitting' $\longrightarrow$ `MQMAS') you can reload the previous file
+`3QMAS-Z\_unsheared\_fit.txt'. But the simulation must be also sheared and scaled. Click the `Auto' Button to automatically
+select the right Shearing and scaling ratios (they depend on I and MQ parameters).
+
+Note: Bruker xfshear procedure scales the Carrier and Reference frequency to get the correct ppm scale. So processing step 2) above can
+be replaced by `Tools $\longrightarrow$ Scale Car/Ref' and select the same drop down menu choice.\\
+Finally for fitting panel in that case one must choose shearing ratio as set by Auto button, but scale must remain 1.
+
+\section{Unconventional split-t1 full echo 3QMAS of 3/2 spin nucleus (${}^{35}\text{Cl}$)}
 
 
-\section{Split \textit{T}$_\text{1}$ processing}
-In a split $T_\text{1}$ experiment, the additional shift of the echo is taken into account within the pulse sequence.
-This leads to regular echo data, were the position of the echo in the time domain is always the same.
-Due to this, the shearing is no longer required.
-Also, the data is recorded in such a way that no hypercomplex processing is necessary.
-The following assumes that you have read the information above (about the Z-Filter processing).
-
-\begin{itemize}
-	\item Open the Varian file Rb87\_3Q\_splitt1.fid using File $\longrightarrow$ Open
-\end{itemize}
-Now, we must process this data as a whole echo acquisition (see the tutorial on this).
-
-\begin{itemize}
-	\item Swap the echo at position 375 (Tools $\longrightarrow$ Swap Echo)
-	\item Set the size to 4096 points (Matrix $\longrightarrow$ Sizing)
-	\item Apply apodization if required (not used in this case)
-	\item Fourier Transform
-	\item Phase the imaginary part to zero (168.9 degrees, via Tools $\longrightarrow$ Phasing)
-\end{itemize}
-This should result in (zoomed):
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig9.png}
-\end{center}
-Now we can process D1:
-
-\begin{itemize}
-	\item Switch to D1 (sideframe, radiobutton)
-	\item View position 2081 along D2
-	\item Tools $\longrightarrow$  Complex Conjugate
-	\item Set size to 512
-	\item Fourier Transform
-\end{itemize}
-This results in:
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig10.png}
-\end{center}
-
-Now, me must scale the spectral width of this dimension, as described above.
-However, with this experiment something strange is going on.
-According to the Varian pulse sequence used to record this data, the SW that you supply is $9/16$ times the desired spectral width.
-For the processing, this means that this scaling should first be undone.
-
-\begin{itemize}
-	\item Multiply the spectral width by 16.0/9.0 (either via Tools  $\longrightarrow$ Scale SW, or
-	  by typing at the SW box in the bottom frame).
-	\item Multiply the SW by the MQMAS scaling value: Tools  $\longrightarrow$ Scale SW, and select `Spin 3/2, -3Q'
-\end{itemize}
-Now, we should reference the ppm axis in both dimension.
-As before:
-\begin{itemize}
-  \item Set the reference via Tools $\longrightarrow$ Reference $\longrightarrow$ Set Reference, and
-	 fill in `196.3182865' in the Frequency box
-	\item Switch to D2 (sideframe, click on the lower left radiobutton)
-	\item Set the reference in the same way
-\end{itemize}
-Switching to a contour plot results in (zoomed):
-\begin{center}
-%\includegraphics[width=0.8\linewidth]{Figs/Fig11.png}
-\end{center}
-This is equivalent to the spectrum obtained before, for the Z-Filter data.
-This spectrum is also supplied together with this tutorial, and named `Rb87\_3Q\_splitt1\_(final\_spectrum).mat'.
-Note that the relevant region was extracted (to reduce the size of the file).
-
-
-\section{Equations}
-The following Section will show some equations for the relevant shearing and scaling constants used
-for MQMAS processing.\footnote{This sections is based on:
-  P.\ P.\ Man, \textit{Phys.\ Rev.\ B}, \textbf{5}, 2764 (1998) and 
-  T.\ Anup\~{o}ld, A.\ Reinhold, P.\ Sarv, A.\ Samoson, \textit{Solid State Nucl.\ Magn.\ Reson.},
-  \textbf{13}, 87 (1998).}
-
-These are all included in ssNake in such a way that there is no need to remember these values.
-However, for the sake of completeness, they are provided here.
-
-The following table summarises the values:
-\begin{center}
-\begin{tabular}[h]{c r r r r}
-  \toprule
-  $I$ & p$Q$ & $k$ & 1/$a$ & $z$\\
-  \midrule
-  3/2 & $-3Q$ & 7/9 & 9/34 & 680/27\\
-  5/2 & $3Q$ & 19/12 & $-12/17$& 8500/81\\
-   & $-5Q$ & 25/12 &12/85& 8500/81 \\
-  7/2 & $3Q$ & 101/45 & $-45/34$& 6664/27 \\
-   & $5Q$ & 11/9 & $-9/34$ & 6664/27\\
-   & $-7Q$ & 161/45 & $45/476$ & 6664/27\\
-  9/2 & $3Q$ & 91/36 &  $-36/17$ & 1360/3 \\
-   & $5Q$ & 95/36 & $-36/85$ & 1360/3 \\
-	& $7Q$ & 7/18 & $-18/117$ & 1360/3 \\
-	& $-9Q$ & 31/6 & 6/85 & 1360/3 \\
-  \bottomrule
-\end{tabular}
-\end{center}
-Here, $k$ is the shearing factor, $1/a$ the scaling of the spectral width, and $z$ is a value required to determine the quadrupolar product $P_\text{Q}$ from an MQMAS spectrum (see later).
-The equations are:
-\begin{equation}
-  k = p \frac{36I(I+1)-17p^2 - 10}{36I(I+1) - 27}
-\end{equation}
-\begin{equation}
-  1/a = 1/(k - p)
-\end{equation}
-  \begin{equation}
-	 z = \frac{1}{\frac{b}{a}-r}
-  \end{equation}
-  With:
- \begin{equation}
-	b = r	(k + \lambda)
- \end{equation}
- and
- \begin{equation}
-	r = -\frac{3}{10}\frac{I(I+1)-3/4}{[2I(2I-1)]^2}
- \end{equation}
- \begin{equation}
-	\lambda = p \frac{I(I+1)-3/4 \cdot p^2}{-I(I+1)+3/4}
- \end{equation}
-
- \subsection{Further background}
- Here, we will quickly derive the relevant equations shown above.
-
- The centre of mass of a line in the MQMAS spectrum is located in D2 at:
- \begin{equation}
-	\delta_\text{D2} = \delta_\text{iso} + \delta_\text{QIS}  =  \delta_\text{iso} + r
-	\frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6
- \end{equation}
- with
- \begin{equation}
-	r = -\frac{3}{10}\frac{I(I+1)-3/4}{[2I(2I-1)]^2}
- \end{equation}
- In D1 the centre of mass, before shearing is located at:
- \begin{equation}
-	\delta_\text{D1} = -p\delta_\text{iso} + \delta_\text{QIS}  =  -p\delta_\text{iso} +
-	\lambda r
-	\frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6
- \end{equation}
- with:
-
- \begin{equation}
-	\lambda = p \frac{I(I+1)-3/4 \cdot p^2}{-I(I+1)+3/4}
- \end{equation}
-After shearing, the centre of mass gets shifted to:
- \begin{align}
-	\delta_\text{D1'} &= \delta_\text{D1} + k\delta_\text{D2} = (k - p)\delta_\text{iso} +
-	r	(k + \lambda) \frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6 \\
-	& = a  \delta_\text{iso} + b \frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6
- \end{align}
- with constants:
- \begin{align}
-	a & = k(I,p) - p \\
-	b & = r(I)	(k(I,p) + \lambda(I,p))
- \end{align}
- A good way to processes this data, is to scale the spectral width of F1 by $1/a$.
- This means in the resulting spectrum, changes in chemical shift will be along the diagonal of the spectrum.
-This leads to:
-\begin{equation}
-  \delta_\text{D1''} = \delta_\text{iso} + \frac{b}{a} \frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6
-\end{equation}
-When this processing is performed, nuclei which have a quadrupolar coupling are always located in the lower right part of the spectrum, beneath the diagonal that is.
-When a lineshape is located on the diagonal, and stretched along it, this is caused by a distribution in chemical shift.
-
-Based on the centre of mass in D1'' and D2, the NMR parameters $\delta_\text{iso}$ and $P_\text{Q}$ can be determined:
-
-\begin{align}
-  \delta_\text{iso} & = \delta_\text{D1''} - \frac{b}{a\cdot r} \delta_\text{D2} =
-                      \delta_\text{D1''} - \frac{k+\lambda}{a} \delta_\text{D2} \\
-                    & = \frac{17 \delta_\text{D1''} + 10  \delta_\text{D2}}{27}
-\end{align}
-This value is independent of $I$ and $p$.
-
-For $P_\text{Q}$ the calculation is a bit more difficult:
-\begin{align}
-  \delta_\text{D1''} - \delta_\text{D2} =& \left( \frac{b}{a} - r \right)
-                                           \frac{P_\text{Q}^2}{\nu_0^2} \cdot 10^6\\ 
-  P_\text{Q} =& \sqrt{  \frac{1}{\frac{b}{a}-r}\cdot 10^{-6} \nu_0^2 (\delta_\text{F1''} -
-                \delta_\text{F2}) } \\
-  =& \sqrt{  z \cdot 10^{-6} \nu_0^2 (\delta_\text{F1''} -
-     \delta_\text{F2}) } 
-\end{align}
-With a scaling factor of:
-\begin{equation}
-  z = \frac{1}{\frac{b}{a}-r}
-\end{equation}
-These depend only on $I$ and are tabulated above.
-These equation can be used to calculate the isotropic shift and quadrupolar product ($P_\text{Q}$) of a line based on the centre of mass of the line in both dimension.
-These equations have been included in ssNake in the form of a utility, which can by found in the Utilities menu.
 
 \end{document}
